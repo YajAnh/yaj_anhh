@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?xfamily=DM+Sans:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&family=Lora:wght@400;500;600&family=Literata:opsz,wght@7..72,400;7..72,500;7..72,600&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="stylesheet" href="style.css" />
+
+</head>
+<body>
+    <div class="top_bar">
+        <div class="left_nav_icons">        
+            <button class="icon_button" id="menu-button" type="button" aria-label="Open menu" aria-haspopup="dialog" aria-controls="menu-sheet">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+            </div>
+
+        <div class="title">
+            <h1>Ya8j</h1>
+        </div>
+
+        <div class="right_nav_icons">
+            <button class="dark_mode_button icon_button" type="button" aria-label="Enable dark mode" aria-pressed="false">
+                <span class="material-symbols-outlined">dark_mode</span>
+            </button>
+
+            <button class="settings_button icon_button" id="settings-button" type="button" aria-label="Reading settings" aria-haspopup="dialog" aria-controls="settings-sheet">
+                <span class="material-symbols-outlined">settings</span>
+            </button>
+        </div>
+    </div>
+
+    <div class="article">
+        <div class="header_box">
+            <div class="article_header">
+                <h2>Technology: The Good, The Bad, The Ugly</h2>
+
+                <div class="article_info">
+                    <span class="material-symbols-outlined">calendar_month</span>
+                    <span>December 30, 2020</span>
+                    <span aria-hidden="true">·</span>
+                    <span>By Brandon Swenson</span>
+                </div>
+            </div>
+             
+            <div class="subheader">
+                <h3>A balanced look at technology’s benefits, drawbacks, and risks, with practical ways to use digital tools more mindfully.</h3>
+            </div>
+        </div>
+
+        <div class="content">
+            <section>
+                <h3>The Good</h3>
+                <p>Technology helps people stay connected, work more efficiently, and reach information and education from almost anywhere. Digital tools can make everyday tasks easier and open opportunities that once depended on location.</p>
+            </section>
+            <section>
+                <h3>The Bad</h3>
+                <p>Constant access can make it harder to rest and disconnect. Long stretches on devices can also contribute to sedentary habits, physical strain, and stress.</p>
+            </section>
+            <section>
+                <h3>The Ugly</h3>
+                <p>Online anonymity and rapid sharing can amplify bullying and misinformation. The article encourages readers to be thoughtful about what they consume and how they interact online.</p>
+            </section>
+            <section>
+                <h3>Finding Balance</h3>
+                <p>Set boundaries that fit your life: silence nonessential notifications, take breaks from screens, and make some moments device-free. Regularly consider whether a tool is helping you reach your goals or demanding more time and attention than it gives back.</p>
+            </section>
+        </div>
+    </div>
+
+
+    <dialog class="side_sheet settings_sheet" id="settings-sheet" aria-labelledby="settings-title">
+        <div class="right_sheet">
+            <header class="settings_header">
+                <h2 id="settings-title">Reading settings</h2>
+                <button class="settings_close" type="button" aria-label="Close settings">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </header>
+            <div class="settings_controls">
+                <div class="setting_group">
+                    <label class="setting_label" for="font-picker">Reading font</label>
+                    <select id="font-picker">
+                        <option value="newsreader">Newsreader</option>
+                        <option value="libre-baskerville">Libre Baskerville</option>
+                        <option value="lora">Lora</option>
+                        <option value="literata">Literata</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </dialog>
+
+    <dialog class="side_sheet menu_sheet" id="menu-sheet" aria-labelledby="menu-sheet-title">
+        <div class="right_sheet">
+            <header class="settings_header">
+                <h2 id="menu-sheet-title">Menu</h2>
+                <button class="settings_close" type="button" aria-label="Close menu">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </header>
+            <p class="coming_soon">Coming soon</p>
+        </div>
+    </dialog>
+    <script src="logic.js"></script>
+
+</body>
+</html>

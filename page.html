@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yaj</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked@15.0.7/marked.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.2.6/dist/purify.min.js" defer></script>
+</head>
+<body>
+    <header class="yaj-site-header">
+            <div class="project-style">
+                <button class="yaj-name" type="button">
+                    <p>Yaj</p>
+                    <span class="material-symbols-outlined" aria-hidden="true">keyboard_arrow_down</span>
+                </button>
+                <button class="branch" type="button">
+                    <span class="material-symbols-outlined" aria-hidden="true">fork_right</span>
+                    <p>Master</p>
+                    <span class="material-symbols-outlined" aria-hidden="true">keyboard_arrow_down</span>
+                </button>
+                <button class="refresh-preview" type="button" aria-label="Refresh current tab" title="Refresh current tab">
+                    <span class="material-symbols-outlined" aria-hidden="true">refresh</span>
+                </button>
+                <button class="open_full" type="button" aria-label="Enter full view" aria-pressed="false" title="Enter full view">
+                    <span class="material-symbols-outlined" aria-hidden="true">open_in_full</span>
+                </button>
+            </div>
+    </header>
+
+    <footer class="yaj-site-bottom-bar">
+        <div class="editor-breadcrumb" id="editor-breadcrumb">No file open</div>
+        <ul class="texts" aria-label="Editor status">
+            <li>UTF-8</li>
+            <li>4 spaces</li>
+            <li>
+                <span class="material-symbols-outlined" role="img" aria-label="Preview options" title="Preview options">eyeglasses_3</span>
+            </li>
+        </ul>
+    </footer>
+
+    <div class="yaj-tab-bar" role="tablist" aria-label="Open files"></div>
+
+    <nav class="yaj-nav-side-bar">
+        <ul class="side-bar-items">
+            <li>
+                <button class="is-active project-side-nav__toggle" type="button" aria-label="Projects" aria-current="page" aria-expanded="true" aria-controls="project-side-nav" title="Projects">
+                    <span class="material-symbols-outlined" aria-hidden="true">folder</span>
+                </button>
+            </li>
+            <li>
+                <hr>
+            </li>
+
+            <li>
+                <button type="button" aria-label="Settings" title="Settings">
+                    <span class="material-symbols-outlined" aria-hidden="true">settings</span>
+                </button>
+            </li>
+            <li>
+                <button type="button" aria-label="More options" title="More options">
+                    <span class="material-symbols-outlined" aria-hidden="true">more_horiz</span>
+                </button>
+            </li>
+        </ul>
+    </nav>
+
+    <aside class="yaj-project-side-nav" id="project-side-nav" aria-label="Project explorer">
+        <div class="side-nav-header">
+            <h3>Project</h3>
+            <button class="project-side-nav__close" type="button" aria-label="Close project explorer" title="Close">
+                <span class="material-symbols-outlined" aria-hidden="true">close</span>
+            </button>
+        </div>
+
+        <div class="branch-header-thing">
+            <span class="material-symbols-outlined" aria-hidden="true">keyboard_arrow_down</span>
+            <h3>Master</h3>
+        </div>
+
+        <ul class="project-tree">
+            <li>
+                <button class="project-item" type="button" data-project-item data-tree-toggle aria-pressed="false" aria-expanded="false" aria-controls="src-children">
+                    <span class="material-symbols-outlined" data-tree-chevron aria-hidden="true">keyboard_arrow_right</span>
+                    <span class="material-symbols-outlined" aria-hidden="true">folder</span>
+                    <span>src</span>
+                </button>
+                <ul class="project-children" id="src-children" hidden>
+                    <li>
+                        <button class="project-item" type="button" data-project-item data-tree-toggle aria-pressed="false" aria-expanded="false" aria-controls="me-children">
+                            <span class="material-symbols-outlined" data-tree-chevron aria-hidden="true">keyboard_arrow_right</span>
+                            <span class="material-symbols-outlined" aria-hidden="true">folder</span>
+                            <span>me</span>
+                        </button>
+                        <ul class="project-children" id="me-children" hidden>
+                            <li>
+                                <button class="project-item" type="button" data-project-item aria-pressed="false">
+                                    <span class="material-symbols-outlined" aria-hidden="true">html</span>
+                                    <span data-file-source="src/me/about_me.html">about_me.html</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button class="project-item" type="button" data-project-item aria-pressed="false">
+                                    <span class="material-symbols-outlined" aria-hidden="true">html</span>
+                                    <span data-file-source="src/me/github_projects.html">github_projects.html</span>
+                                </button>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <button class="project-item" type="button" data-project-item data-tree-toggle aria-pressed="false" aria-expanded="false" aria-controls="school-children">
+                    <span class="material-symbols-outlined" data-tree-chevron aria-hidden="true">keyboard_arrow_right</span>
+                    <span class="material-symbols-outlined" aria-hidden="true">folder</span>
+                    <span>school</span>
+                </button>
+                <ul class="project-children" id="school-children" hidden>
+                    <li>
+                        <button class="project-item" type="button" data-project-item data-tree-toggle aria-pressed="false" aria-expanded="false" aria-controls="html-task-children">
+                            <span class="material-symbols-outlined" data-tree-chevron aria-hidden="true">keyboard_arrow_right</span>
+                            <span class="material-symbols-outlined" aria-hidden="true">folder</span>
+                            <span>html-performance-task</span>
+                        </button>
+                        <ul class="project-children" id="html-task-children" hidden>
+                            <li>
+                                <button class="project-item" type="button" data-project-item aria-pressed="false">
+                                    <span class="material-symbols-outlined" aria-hidden="true">html</span>
+                                    <span data-file-source="school/html-performance-task/page.html">page.html</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button class="project-item" type="button" data-project-item aria-pressed="false">
+                                    <span class="material-symbols-outlined" aria-hidden="true">css</span>
+                                    <span data-file-source="school/html-performance-task/style.css">style.css</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button class="project-item" type="button" data-project-item aria-pressed="false">
+                                    <span class="material-symbols-outlined" aria-hidden="true">javascript</span>
+                                    <span data-file-source="school/html-performance-task/logic.js">logic.js</span>
+                                </button>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            <li>
+                <button class="project-item" type="button" data-project-item aria-pressed="false">
+                    <span class="material-symbols-outlined" aria-hidden="true">markdown_document</span>
+                    <span data-file-source="README.MD" data-markdown-preview>README.MD</span>
+                </button>
+            </li>
+        </ul>
+    </aside>
+
+    <main class="code-viewer" aria-label="Code viewer">
+        <div class="editor-message" id="editor-message">Select a file from the project tree</div>
+        <div class="editor-code" id="editor-code" hidden>
+            <div class="editor-gutter" id="editor-gutter" aria-hidden="true"></div>
+            <pre class="editor-source"><code id="source-code"></code></pre>
+        </div>
+        <iframe class="html-preview" id="html-preview" title="Rendered HTML preview" hidden></iframe>
+        <article class="markdown-preview" id="markdown-preview" hidden></article>
+    </main>
+
+    <script src="script.js" defer></script>
+
+</body>
+</html>
