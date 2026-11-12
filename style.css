@@ -350,6 +350,16 @@ body.is-full-view .code-viewer {
     font-size: 15px;
 }
 
+.editor-tab__icon.material-symbols-outlined {
+    display: grid;
+    place-items: center;
+    flex: 0 0 16px;
+    width: 16px;
+    height: 16px;
+    font-size: 15px;
+    line-height: 1;
+}
+
 .editor-tab__label {
     min-width: 0;
     overflow: hidden;

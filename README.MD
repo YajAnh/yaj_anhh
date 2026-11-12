@@ -10,5 +10,5 @@ A small personal site and browser-based project workspace.
 
 ## Workspace
 
-Open `page.html` to use the project tree, file tabs, source viewer, and rendered previews. HTML files open as previews from their parent folders. Other files open as highlighted source. `README.MD` opens as rendered Markdown.
+Open `index.html` to use the project tree, file tabs, source viewer, and rendered previews. HTML files open as previews from their parent folders. Other files open as highlighted source. `README.MD` opens as rendered Markdown.
 
