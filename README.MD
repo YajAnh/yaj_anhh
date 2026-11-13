@@ -10,5 +10,4 @@ A small personal site and browser-based project workspace.
 
 ## Workspace
 
-Open `index.html` to use the project tree, file tabs, source viewer, and rendered previews. HTML files open as previews from their parent folders. Other files open as highlighted source. `README.MD` opens as rendered Markdown.
-
+Open `index.html` to start Yaj; after a brief splash, the About and Projects pages open as rendered preview tabs, with About selected. Use the project tree, file tabs, and source viewer to explore the rest of the workspace. HTML files open as previews from their parent folders. Other files open as highlighted source. `README.MD` opens as rendered Markdown.

@@ -93,7 +93,6 @@ body {
     height: 34px;
     overflow-x: auto;
     background: #303234;
-    border-bottom: 1px solid var(--bar-border);
     transition: left 180ms ease, opacity 180ms ease, transform 180ms ease, visibility 180ms ease;
 }
 
@@ -738,4 +737,117 @@ body.is-full-view .refresh-preview {
     margin: 6px 8px;
     border: 0;
     border-top: 1px solid var(--bar-border);
+}
+
+.yaj-desktop .wallpaper {
+    width: 100%;
+    height: 100%;
+}
+
+.yaj-desktop {
+    position: fixed;
+    z-index: 20;
+    inset: 0;
+    overflow: hidden;
+    background: #071526;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 260ms ease, visibility 0s linear 260ms;
+}
+
+body.is-starting .yaj-desktop {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0s;
+}
+
+.wallpaper {
+    position: absolute;
+    inset: 0;
+}
+
+.wallpaper-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.desktop-bottom-bar {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: grid;
+    place-items: center;
+    padding: 3px 12px;
+    background: #101923aa;
+    border-top: 1px solid #ffffff24;
+    backdrop-filter: blur(18px);
+}
+
+.desktop-dock-icon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+.desktop-splash {
+    position: fixed;
+    z-index: 21;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: #17191ced;
+    color: #e6e9ed;
+    font: 16px "Cascadia Code", monospace;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 180ms ease, visibility 0s linear 180ms;
+}
+
+body.is-starting .desktop-splash {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0s;
+}
+
+.desktop-splash img {
+    width: 44px;
+    height: 44px;
+    object-fit: contain;
+}
+
+.desktop-splash__progress {
+    width: 120px;
+    height: 2px;
+    overflow: hidden;
+    background: #ffffff24;
+}
+
+.desktop-splash__progress::after {
+    display: block;
+    width: 40%;
+    height: 100%;
+    background: #4ea8ff;
+    content: "";
+    animation: splash-progress 1s ease-in-out infinite alternate;
+}
+
+@keyframes splash-progress {
+    to { transform: translateX(150%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .yaj-desktop,
+    .desktop-splash {
+        transition-duration: 0.01ms;
+    }
+
+    .desktop-splash__progress::after {
+        animation-duration: 2s;
+    }
 }

@@ -314,5 +314,49 @@ projectTree.addEventListener(
     }
 )
 
+async function startDesktop() {
+    const aboutFile = projectTree.querySelector('[data-file-source="src/me/about_me.html"]');
+    const projectsFile = projectTree.querySelector('[data-file-source="src/me/github_projects.html"]');
+    const aboutButton = aboutFile?.closest("[data-project-item]");
+    const projectsButton = projectsFile?.closest("[data-project-item]");
+    if (!aboutButton || !projectsButton) {
+        editorMessage.textContent = "Unable to open the About and Projects pages automatically. Select a file from the project tree.";
+        document.body.classList.remove("is-starting");
+        return;
+    }
 
+    ["src-children", "me-children"].forEach((childrenId) => {
+        const toggle = projectTree.querySelector(`[aria-controls="${childrenId}"]`);
+        const children = document.getElementById(childrenId);
+        toggle.setAttribute("aria-expanded", "true");
+        toggle.querySelector("[data-tree-chevron]").textContent = "keyboard_arrow_down";
+        children.hidden = false;
+    });
+    projectTree.querySelectorAll("[data-project-item]").forEach((item) => {
+        item.setAttribute("aria-pressed", String(item === aboutButton));
+    });
 
+    const previewReady = new Promise((resolve) => {
+        let timeoutId;
+        const finish = () => {
+            window.clearTimeout(timeoutId);
+            resolve();
+        };
+        htmlPreview.addEventListener("load", finish, { once: true });
+        timeoutId = window.setTimeout(finish, 5000);
+    });
+
+    openFileTab(aboutButton, aboutFile.dataset.fileSource);
+    openFileTab(projectsButton, projectsFile.dataset.fileSource);
+    activeTab = openTabs.find((tab) => tab.path === aboutFile.dataset.fileSource && tab.mode === "preview");
+    renderTabs();
+    renderEditor();
+
+    await Promise.all([
+        previewReady,
+        new Promise((resolve) => window.setTimeout(resolve, 1400))
+    ]);
+    document.body.classList.remove("is-starting");
+}
+
+startDesktop();

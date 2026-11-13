@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yaj</title>
+    <link rel="icon" type="image/png" href="logo.png">
 
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
@@ -11,7 +12,7 @@
     <script src="https://cdn.jsdelivr.net/npm/marked@15.0.7/marked.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/dompurify@3.2.6/dist/purify.min.js" defer></script>
 </head>
-<body>
+<body class="is-starting">
     <header class="yaj-site-header">
             <div class="project-style">
                 <button class="yaj-name" type="button">
@@ -157,6 +158,21 @@
             </li>
         </ul>
     </aside>
+
+    <aside class="yaj-desktop" aria-hidden="true">
+        <div class="wallpaper">
+            <img src="wallpaper.png" alt="" class="wallpaper-image">
+        </div>
+        <div class="desktop-bottom-bar">
+            <img class="desktop-dock-icon" src="logo.png" alt="">
+        </div>
+    </aside>
+
+    <div class="desktop-splash" role="status" aria-label="Starting Yaj">
+        <img src="logo.png" alt="">
+        <span>Yaj</span>
+        <div class="desktop-splash__progress" aria-hidden="true"></div>
+    </div>
 
     <main class="code-viewer" aria-label="Code viewer">
         <div class="editor-message" id="editor-message">Select a file from the project tree</div>
